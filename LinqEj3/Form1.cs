@@ -29,5 +29,23 @@ namespace LinqEj3
             db.insertarEstados(textBox1.Text);
             
         }
+
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                //TXT_Editar_1.Text = dataGridView1.SelectedCells[0].Value.ToString();
+                TXT_Editar_1.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+            }
+
+            //if (dataGridView1.SelectedCells.Count != 0)
+            //{
+            //    TXT_Editar_1.Text = dataGridView1.SelectedCells[0].Value.ToString();
+            //    //TXT_Editar_1.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+
+            //}
+        }
+
     }
 }
