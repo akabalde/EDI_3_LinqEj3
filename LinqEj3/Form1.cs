@@ -12,22 +12,25 @@ namespace LinqEj3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
+            using (DataClasses1DataContext db = new DataClasses1DataContext())
+            {
+                var estados =
+                    from c in db.Estados
+                    select c;
 
-            var estados =
-                from c in db.Estados
-                select c;
-
-            dataGridView1.DataSource = estados;
+                dataGridView1.DataSource = estados;
+            }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            db.insertarEstados(textBox1.Text);
-            
+            using (DataClasses1DataContext db = new DataClasses1DataContext())
+            {
+                db.insertarEstados(textBox1.Text);
+            }
+
         }
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -47,5 +50,9 @@ namespace LinqEj3
             //}
         }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
