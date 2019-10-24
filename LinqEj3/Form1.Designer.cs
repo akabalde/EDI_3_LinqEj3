@@ -47,7 +47,9 @@
             this.DGV_Estados.Location = new System.Drawing.Point(43, 154);
             this.DGV_Estados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DGV_Estados.Name = "DGV_Estados";
+            this.DGV_Estados.ReadOnly = true;
             this.DGV_Estados.RowHeadersWidth = 62;
+            this.DGV_Estados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Estados.Size = new System.Drawing.Size(622, 258);
             this.DGV_Estados.TabIndex = 1;
             this.DGV_Estados.TabStop = false;
